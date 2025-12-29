@@ -11,6 +11,7 @@
             background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         .container {
             max-width: 700px;
@@ -20,20 +21,24 @@
             padding: 30px;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             text-align: center;
+            animation: fadeIn 2s ease-in;
         }
         h1 {
             color: #ff1493;
             font-size: 36px;
             margin-bottom: 20px;
+            animation: bounce 2s infinite;
         }
         h2 {
             color: #ff69b4;
             margin-top: 25px;
             margin-bottom: 15px;
+            animation: fadeIn 2s ease-in;
         }
         p {
             font-size: 18px;
             margin: 5px 0;
+            animation: slideIn 1.5s ease-in;
         }
         ul {
             list-style: none;
@@ -44,26 +49,41 @@
             margin: 10px 0;
             padding-left: 10px;
             position: relative;
+            animation: floatEmoji 2s ease-in-out infinite;
         }
         ul li::before {
             content: "🎈";
             position: absolute;
             left: -25px;
         }
-        .birthday-img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            margin: 20px 0;
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideIn {
+            from {opacity: 0; transform: translateX(-50px);}
+            to {opacity: 1; transform: translateX(0);}
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+
+        @keyframes floatEmoji {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-5px);}
+            100% {transform: translateY(0);}
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🎉 សូមអញ្ជើញមកថ្ងៃកំណើតប៉ប៉ 🎉</h1>
-
-        <!-- Online birthday cake image -->
-        <img src="https://cdn.pixabay.com/photo/2014/06/11/18/09/birthday-cake-362499_1280.jpg" alt="Birthday Cake" class="birthday-img">
 
         <p><strong>📅 ថ្ងៃទី៖</strong> ១ ខែមករា ២០២៦ ម៉ោង ៤:៣០ ល្ងាច</p>
         <p><strong>📍 ទីតាំង៖</strong> ផ្ទះលេខ ៩G ភូមិព្រែកប្រា សង្កាត់ច្បារអំពៅ រាជធានីភ្នំពេញ</p>
